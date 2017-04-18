@@ -1,0 +1,157 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>DUrectory</title>
+    
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="vendor/chosen-js/chosen.css">
+    <link rel="stylesheet" href="styles/home.css">
+      
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+
+    <body>
+        <div id="new-users-bar">
+            <div id="new-users-title">
+                <h2>Welcome!</h2>
+                <span class="font-small italic label-grey horizontal-center">in the last 7 days...</span>
+            </div>
+            <div class="scrollable horizontal-center" data-bind="foreach: newUsers" style="width: 85%; height: 72%; padding-bottom: 20px; position: relative">
+                <div class="user-item">
+                    <div style="margin-bottom: 5px">
+                        <span data-bind="text: user" class="username"></span>
+                        <span class="right italic label-grey font-small" style="padding-top: 3px; padding-right: 1px">was <span style="font-weight: bold">created</span></span>
+                    </div>
+                </div>
+            </div>
+            <div style="bottom: 0; position: absolute; width: 100%; height: 15%; background-color: #343740; box-shadow: 0 -20px 20px -20px #000"></div>
+        </div>
+        <div id="body-container">
+            <img id="du-logo" class="vertical-center horizontal-center h-center-adjust" src="media/dualuniverse.png"/>
+            <div id="search-div" class="vertical-center horizontal-center h-center-adjust">
+                <div id="search-bar-div" class="horizontal-center">
+                    <input type="text" id="search-bar" placeholder="Search..."/>
+                    <div id="search-in-div">
+                        <label style="padding-right: 5px">in</label>
+                        <div style="width: 100px; display: inline-block">
+                            <select class="dropdown label-input" data-bind="chosen:['Users','Orgs'], optionsCaption: 'Any'"></select>
+                        </div>
+                    </div>
+                    <button type="button" id="search-button">Search</button>
+                </div>
+                <div id="or-div" class="horizontal-center">
+                    <div class="left-hr"><hr/></div>
+                    <div class="right-hr"><hr/></div>
+                    <div id="or"><span>OR</span></div>
+                </div>
+                <div id="browse-div" class="horizontal-center">
+                    <ul class="ui-tabs" role="tablist">
+                        <li role="tab">
+                            <a href="#userBrowseTab" data-bind="click: showUserTab, css: { 'active' : selected() == 'userBrowseTab'}">USERS</a>
+                        </li>
+                        <li role="tab">
+                            <a href="#orgBrowseTab" data-bind="click: showOrgTab, css: { 'active' : selected() == 'orgBrowseTab' }">ORGANIZATIONS</a>
+                        </li>
+                    </ul>
+                    <div class="ui-tabpanel" role="tabpanel" data-bind="visible: selected() == 'userBrowseTab'">
+                        <div class="tab-content">
+                            <table style="width: 100%; height: 100%; padding: 20px">
+                                <colspan>
+                                    <col style="width: 40%" />
+                                    <col style="width: 60%" />
+                                </colspan>
+                                <tr>
+                                    <td>
+                                        <div class="top-label">Pledge Status</div>
+                                        <div style="margin-bottom: 40px">
+                                            <select class="dropdown label-input" data-bind="chosen:pledgeOptions, optionsCaption: 'Any', width: '80%'"></select>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="top-label">Created Date</div>
+                                        <div style="margin-bottom: 40px">
+                                            <input type="text" data-bind="datepicker: {dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']}, value: createdDateFrom" />
+                                            <span style="padding-left: 10px; padding-right: 10px; font-style: italic">to</span>
+                                            <input type="text" data-bind="datepicker: {dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']}, value: createdDateTo" />
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="top-label">In Organization</div>
+                                        <div style="margin-bottom: 40px">
+                                            <input type="text" class="label-input" placeholder="Any" data-bind="text: orgBrowse" />
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="top-label">Joined Date</div>
+                                        <div style="margin-bottom: 40px">
+                                            <input type="text" data-bind="datepicker: {dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']}, value: joinedDateFrom" />
+                                            <span style="padding-left: 10px; padding-right: 10px; font-style: italic">to</span>
+                                            <input type="text" data-bind="datepicker: {dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']}, value: joinedDateTo" />
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="ui-tabpanel" role="tabpanel" data-bind="visible: selected() == 'orgBrowseTab'">
+                        <table style="width: 100%; height: 100%; padding: 20px">
+                                <colspan>
+                                    <col style="width: 40%" />
+                                    <col style="width: 60%" />
+                                </colspan>
+                                <tr>
+                                    <td>
+                                        <div class="top-label">Description Contains</div>
+                                        <div style="margin-bottom: 40px">
+                                            <input type="text" class="label-input" placeholder="Any" data-bind="text: orgDescription" />
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="top-label">Created Date</div>
+                                        <div style="margin-bottom: 40px">
+                                            <input type="text" data-bind="datepicker: {dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']}, value: orgCreatedDateFrom" />
+                                            <span style="padding-left: 10px; padding-right: 10px; font-style: italic">to</span>
+                                            <input type="text" data-bind="datepicker: {dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']}, value: orgCreatedDateTo" />
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="top-label">Under Organization</div>
+                                        <div style="margin-bottom: 40px">
+                                            <input type="text" class="label-input" placeholder="Any" data-bind="text: parentOrg" />
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="top-label">Number of Users</div>
+                                        <div style="margin-bottom: 40px">
+                                            <input type="number" step="1" data-bind="value: numUsersFrom" />
+                                            <span style="padding-left: 10px; padding-right: 10px; font-style: italic">to</span>
+                                            <input type="number" step="1" data-bind="value: numUsersTo" />
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                    </div>
+                    <div class="panel-buttons">
+                        <button type="button cancel" id="reset-button">Reset</button>
+                        <button type="button" id="browse-button">Browse</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+        <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
+        <script type='text/javascript' src='vendor/chosen-js/chosen.jquery.js'></script>
+        <script type='text/javascript' src='vendor/knockout-3.4.2.js'></script>
+        <script type='text/javascript' src='vendor/knockout-jqueryui.min.js'></script>
+        <script type='text/javascript' src='scripts/home.js'></script>
+    </body>
+    
+</html>

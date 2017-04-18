@@ -1,0 +1,579 @@
+@font-face {
+    font-family: Glober;
+    src: url("../fonts/GloberThin.otf") format("opentype");
+}
+
+@font-face {
+    font-family: Glober;
+    font-weight: bold;
+    src: url("../fonts/GloberSemiBold.otf") format("opentype");
+}
+
+body {
+    background-color: #2E3138;
+    margin: 0px;
+    font-family: 'Glober';
+    color: white;
+}
+
+button {
+    font-family: 'Glober';
+    font-weight: bold;
+    font-size: 16px;
+    padding-top: 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    border: none;
+    background-color: #009999;
+    color: white;
+    font-size: 12pt;
+    padding-top: 5px;
+    box-shadow: 3px 2px 2px #1f2229;
+}
+
+button:hover {
+    background-color: #007a7a;
+    box-shadow: none;
+}
+
+button:active {
+    background-color: #006b6b;
+    box-shadow: inset 2px 1px 1px #1f2229;
+    color: #888;
+}
+
+button:focus,
+input:focus,
+select:focus{
+    outline: none;
+}
+
+#body-container {
+    width: 100%;
+    height: 100%;
+}
+
+#du-logo {
+    width: 20%;
+}
+
+.horizontal-center {
+    display: block;
+    margin: auto;
+}
+
+.h-center-adjust {
+    padding-left: 300px;
+}
+
+.vertical-center {
+    position: relative;
+    top: 7%;
+}
+
+#search-bar-div {
+    width: 50%;
+    height: 45px;
+}
+
+#search-bar {
+    width: 80%;
+    height: 100%;
+    background-color: rgba(255,255,255,0.1);
+    border-style: solid;
+    border-color: darkgrey;
+    border-width: 1px;
+    color: white;
+    font-size: 16px;
+    padding-left: 52px;
+    background: url('../media/search-icon.png');
+    background-repeat: no-repeat;
+    background-position: 10px;
+    background-size: 22px;
+    padding-bottom: 0px;
+    /*transition: background-color 0.2s linear;*/
+}
+
+#search-bar:hover {
+    background-color: transparent;
+    border-color: white;
+    outline: none;
+}
+
+#search-bar:focus::-webkit-input-placeholder {
+    color: #666;
+}
+
+#search-bar:focus {
+    background-color: #24252A;
+    border-color: #009999;
+}
+
+/*#search-bar:focus + #search-button {
+    width: 100px;
+    padding: 1px 6px;
+}*/
+
+#search-bar:focus + #search-icon {
+    background-color: #24252A;
+}
+
+#search-in-div .chosen-container {
+    background-color: transparent;
+}
+
+#search-in-div .chosen-with-drop {
+    background-color: #24252A;
+}
+
+#search-div {
+    margin-top: 75px;
+}
+
+#search-button {
+    height: 100%;
+    width: 19%;
+    margin-left: -5px;
+}
+
+#or-div {
+    width: 350px;
+    padding: 80px 0 80px 0;
+}
+
+#or {
+    font-size: 22px;
+    padding: 10px;
+    font-weight: bold;
+    margin:0 auto;
+    width: 30px;
+    display: inline;
+}
+
+.left-hr {
+    width: 150px;
+    display: inline-block;
+    float: left;
+}
+
+.right-hr {
+    width: 150px;
+    display: inline-block;
+    float: right;
+}
+
+
+
+#browse-div {
+    width: 50%;
+}
+
+.ui-tabs {
+    list-style: none;
+    padding-left: 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    padding-bottom: 0px;
+}
+
+.ui-tabs li {
+    display: inline-block;
+    width: 200px;
+    text-align: center;
+    background-color: #454954;
+}
+
+.ui-tabs li a {
+    text-decoration: none;
+    display: block;
+    color: white;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.ui-tabpanel {
+    background-color: #454954;
+    padding: 10px;
+    border-top: 3px solid #009999;
+    height: 250px;
+}
+
+.ui-tabs li a.active {
+    background-color: #009999;
+}
+
+.panel-buttons button {
+    width: 50%;
+    height: 40px;
+    display: inline-block;
+    position: relative;
+}
+
+.panel-buttons button:before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    box-shadow: 3px 2px 2px #1f2229;
+}
+
+#reset-button {
+    background-color: #797979;
+}
+
+#reset-button:hover {
+    background-color: #696969;
+}
+
+#reset-button:active {
+    background-color: #585858;
+    color: #222;
+}
+
+#browse-button {
+    float: right;
+}
+
+#new-users-bar {
+    width: 300px;
+    height: 100%;
+    background-color: #24252A;
+    position: absolute;
+    z-index: 10;
+}
+
+#new-users-title span{
+    text-align: center;
+}
+
+#new-users-bar h2{
+    text-align: center;
+    margin-bottom: 3px;
+}
+
+#new-users-title {
+    height: 7%;
+}
+
+#new-users-title span{
+    font-family: Helvetica;
+}
+
+#search-in-div {
+    position: absolute;
+    top: 10px;
+    left: 63%;
+}
+
+.tab-content {
+    width: 100%;
+}
+
+.font-small {
+    font-size: 15px;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.label-grey {
+    color: #999;
+}
+
+.user-item {
+    padding-bottom: 15px;
+    padding-top: 20px;
+    border-bottom: 1px solid white;
+    visibility: visible;
+}
+
+.user-item:first-child {
+    border-top: 1px solid white;
+}
+
+.username {
+    font-weight: bold;
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.right {
+    float: right;
+}
+
+.scrollable::-webkit-scrollbar-track-piece
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.0);
+}
+
+.scrollable::-webkit-scrollbar
+{
+	width: 3px;
+	background-color: rgba(0,0,0,0.0);
+}
+
+.scrollable::-webkit-scrollbar-thumb
+{
+	background-color: #009999;
+}
+
+.scrollable {
+    overflow-y: hidden;
+    padding-right: 7px;
+}
+
+.scrollable:hover {
+    overflow-y: scroll;
+}
+
+.top-label {
+    padding-bottom: 10px
+}
+
+
+
+.label-input {
+    width: 80%;
+}
+
+.chosen-container,
+.chosen-with-drop {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-position: 40px 3px;
+    background-size: 14px 14px;
+    width: 100%;
+    height: 25px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    letter-spacing: 1px;
+}
+
+select.dropdown:active,
+select.dropdown:selected {
+    background-color: #24252A;
+}
+
+.chosen-container a.chosen-single,
+.chosen-container-active.chosen-with-drop .chosen-single{
+    border: none;
+    background-color: transparent;
+    background: none;
+    box-shadow: none;
+    padding-left: 10px;
+    color: white;
+    padding-top: 3px;
+    font-family: Arial;
+    margin-top: -2px;
+}
+
+.chosen-container-single .chosen-default span{
+    color: #aaa;
+}
+
+.chosen-container-single .chosen-single div {
+    top: 3px;
+}
+
+.chosen-container-active.chosen-with-drop .chosen-single span{
+    color: transparent;
+}
+
+.chosen-single, 
+.chosen-container-single {
+    width: 100%;
+    background-color: #24252A;
+}
+
+#search-in-div :not(.chosen-with-drop) .chosen-container-single {
+    border-width: 0px 0px 1px 0px;
+    border-color: #099;
+    border-style: solid;
+}
+
+select.dropdown li {
+    background-color: #24252A;
+}
+
+.chosen-container div.chosen-drop {
+    border-radius: 0;
+    background: none;
+    background-color: #24252A;
+    border-color: #24252A;
+}
+
+.chosen-container .chosen-results {
+    color: #bbb;
+    font-weight: bold;
+}
+
+.chosen-container .chosen-results li.highlighted {
+    background-color: #007a7a;
+    background-image: none;
+}
+
+tbody input {
+    background-color: #24252A;
+    border-color: #24252A;
+    box-shadow: none;
+    padding-left: 10px;
+    border-style: solid;
+    height: 25px;
+    color: white;
+}
+
+tbody td div input {
+    width: 40%;
+}
+
+.ui-datepicker,
+.ui-widget.ui-widget-content{
+    z-index: 15;
+    background-color: #24252A;
+    border-radius: 0;
+    border-color: #24252A;
+    border-width: 2px 0px 0px 0px;
+    border-color: #099;
+}
+
+.ui-datepicker .ui-datepicker-header {
+    color: white;
+}
+
+.ui-datepicker a {
+    text-decoration: none;
+}
+
+.ui-datepicker table {
+    width: 100%;
+}
+
+.ui-datepicker-header {
+    background: none;
+    color: #eee;
+    font-weight: bold;
+    line-height: 30px;
+    border: none;
+}
+
+.ui-datepicker-title {
+  text-align: center;
+}
+
+.ui-datepicker-prev, .ui-datepicker-next {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  cursor: pointer;
+  line-height: 600%;
+  overflow: hidden;
+}
+
+.ui-datepicker-header .ui-datepicker-prev.ui-state-hover{
+    background: none;
+    border-color: transparent;
+}
+
+.ui-datepicker-header .ui-datepicker-next.ui-state-hover{
+    background: none;
+    border-color: transparent;
+}
+
+.ui-datepicker-header .ui-datepicker-prev.ui-state-hover span{
+    background-image: url('../media/arrow-left-circle-hover.png');
+    border: none;
+}
+
+.ui-datepicker-header .ui-datepicker-next.ui-state-hover span{
+    background-image: url('../media/arrow-right-circle-hover.png');
+    border: none;
+}
+
+.ui-datepicker .ui-datepicker-prev span,
+.ui-datepicker .ui-datepicker-next span {
+    text-align: center;
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: 16px;
+}
+
+.ui-datepicker .ui-datepicker-prev span {
+    background-image: url('../media/arrow-left-circle.png');
+}
+
+.ui-datepicker .ui-datepicker-next span {
+    background-image: url('../media/arrow-right-circle.png');
+}
+
+.ui-datepicker-prev {
+  float: left;
+  background-position: center -30px;
+}
+.ui-datepicker-next {
+  float: right;
+  background-position: center 0px;
+}
+
+.ui-datepicker thead {
+  border-bottom: 1px solid white;
+}
+
+.ui-datepicker th {
+  text-transform: uppercase;
+  font-size: 6pt;
+  padding: 5px 0;
+  color: white;
+}
+
+.ui-datepicker tbody td {
+  padding: 0;
+}
+
+.ui-datepicker td span, .ui-datepicker td a{
+  display: inline-block;
+  font-weight: bold;
+  text-align: center;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  color: white;
+}
+.ui-datepicker-calendar .ui-state-default {
+  background: transparent;
+  color: white;
+  border: none;
+}
+.ui-datepicker-unselectable .ui-state-default {
+  background: #f4f4f4;
+  color: white;
+}
+
+.ui-datepicker-calendar .ui-state-hover {
+  color: #099;
+}
+
+.ui-datepicker-calendar .ui-state-active {
+  color: #099;
+  border: 1px solid #099;
+}
+
+.ui-datepicker-calendar td:first-child .ui-state-active {
+  width: 29px;
+  margin-left: 0;
+}
+.ui-datepicker-calendar td:last-child .ui-state-active {
+  width: 29px;
+  margin-right: 0;
+}
+
+.ui-datepicker-calendar tr:last-child .ui-state-active {
+  height: 29px;
+  margin-bottom: 0;
+}
